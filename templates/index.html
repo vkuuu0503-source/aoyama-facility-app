@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>青学施設検索</title>
+</head>
+<body>
+    <h1>青山学院大学 施設検索</h1>
+    <form method="get">
+        <input type="text" name="q" placeholder="施設名や種類で検索">
+        <button type="submit">検索</button>
+    </form>
+    <ul>
+        {% for f in facilities %}
+        <li>
+            <b>{{ f['name'] }}</b> ({{ f['type'] }}) - {{ f['location'] }} / {{ f['opening_hours'] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
